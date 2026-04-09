@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IMPRONTO | Producción de alto impacto</title>
+<title>IMPRONTO | Precisión que domina</title>
 
 <link rel="icon" href="Logo.png.jpeg">
 
@@ -12,42 +12,43 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
     background:#000;
     color:#fff;
     font-family:'Inter',sans-serif;
+    overflow-x:hidden;
 }
 
 /* HERO */
 .hero{
     height:100vh;
-    background:url('hero.jpg') center/cover;
+    background:url('hero.jpg') center/cover no-repeat;
     position:relative;
 }
 .overlay{
     position:absolute;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.7);
+    background:linear-gradient(to bottom,rgba(0,0,0,0.7),#000);
 }
 .title{
-    font-family:'Oswald',sans-serif;
-    font-size:clamp(3rem,9vw,7rem);
+    font-family:'Playfair Display',serif;
+    font-size:clamp(3rem,8vw,6rem);
     line-height:0.9;
-    letter-spacing:2px;
 }
+
 .gold{color:#b59410;}
 
-/* BOTONES */
+/* BOTÓN */
 .btn{
     border:1px solid #b59410;
-    padding:15px 45px;
-    text-transform:uppercase;
+    padding:14px 40px;
     letter-spacing:3px;
     font-size:12px;
+    text-transform:uppercase;
     transition:0.4s;
 }
 .btn:hover{
@@ -56,31 +57,29 @@ body{
 }
 
 /* SECCIONES */
-.section{padding:120px 10%;}
+.section{
+    padding:140px 12%;
+}
 
 /* CARDS */
 .card{
-    background:#111;
-    padding:30px;
-    transition:0.4s;
-}
-.card:hover{
-    transform:translateY(-10px);
-    border:1px solid #b59410;
+    background:#0f0f0f;
+    padding:40px;
+    border:1px solid #1a1a1a;
 }
 
-/* FORM PREMIUM */
+/* FORM */
 .form-box{
-    background:linear-gradient(145deg,#111,#1a1a1a);
-    padding:40px;
-    border:1px solid #333;
+    background:#0f0f0f;
+    padding:50px;
+    border:1px solid #222;
 }
 input,textarea{
     width:100%;
     padding:14px;
     margin-bottom:15px;
     background:#000;
-    border:1px solid #444;
+    border:1px solid #333;
 }
 </style>
 </head>
@@ -88,108 +87,112 @@ input,textarea{
 <body>
 
 <!-- NAV -->
-<nav class="fixed w-full flex justify-between items-center px-10 py-6 bg-black/70 backdrop-blur z-50">
+<nav class="fixed w-full flex justify-between items-center px-12 py-6 bg-black/60 backdrop-blur z-50">
     <img src="Logo.png.jpeg" class="h-10">
     <a href="#form" class="btn">Cotizar</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero flex items-center px-12">
 <div class="overlay"></div>
 
-<div class="relative z-10 h-full flex items-center px-10">
-<div>
+<div class="relative z-10 max-w-3xl">
 <h1 class="title">
-TU MARCA<br>
-<span class="gold">DEBE IMPACTAR</span><br>
-O DESAPARECE
+La diferencia<br>
+entre verse bien<br>
+y <span class="gold">dominar el mercado.</span>
 </h1>
 
-<p class="mt-6 max-w-lg text-gray-300">
-No vendes más porque tu imagen no transmite poder. Nosotros solucionamos eso.
+<p class="mt-8 text-gray-400 text-lg">
+Las marcas que lideran no improvisan su imagen.
+La construyen con precisión.
 </p>
 
-<a href="#form" class="btn mt-8 inline-block">QUIERO RESULTADOS</a>
-</div>
+<a href="#form" class="btn mt-10 inline-block">Solicitar asesoría</a>
 </div>
 </section>
 
-<!-- SERVICIOS -->
+<!-- AUTORIDAD -->
 <section class="section">
-<h2 class="text-5xl mb-16 font-bold">Servicios</h2>
+<h2 class="text-4xl mb-10">No trabajamos con cualquiera.</h2>
 
-<div class="grid md:grid-cols-3 gap-10">
+<p class="max-w-2xl text-gray-400 text-lg">
+Trabajamos con empresas que entienden que su imagen no es un gasto,
+es una herramienta de poder para vender más, posicionarse mejor y dominar su sector.
+</p>
+</section>
+
+<!-- PROCESO -->
+<section class="section bg-black">
+<h2 class="text-4xl mb-16">Cómo lo hacemos</h2>
+
+<div class="grid md:grid-cols-3 gap-12">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80" class="mb-4">
-<h3 class="text-xl font-bold">Diseño estratégico</h3>
+<h3 class="text-xl mb-4 gold">01</h3>
+<p>Analizamos tu marca y detectamos por qué no está generando el impacto que debería.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1581091012184-5c8e3a7d1a1d?q=80" class="mb-4">
-<h3 class="text-xl font-bold">Producción premium</h3>
+<h3 class="text-xl mb-4 gold">02</h3>
+<p>Diseñamos una identidad y piezas que transmiten autoridad y confianza inmediata.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1581091215367-59ab6b4d5b0c?q=80" class="mb-4">
-<h3 class="text-xl font-bold">Gran formato</h3>
+<h3 class="text-xl mb-4 gold">03</h3>
+<p>Producimos con estándares premium que elevan tu percepción en el mercado.</p>
 </div>
 
 </div>
 </section>
 
 <!-- RESEÑAS -->
-<section class="section bg-black">
-<h2 class="text-5xl mb-16 font-bold">Empresas que confiaron</h2>
+<section class="section">
+<h2 class="text-4xl mb-16">Resultados</h2>
 
 <div class="grid md:grid-cols-3 gap-10">
 
 <div class="card">
-<p>"Incrementamos ventas en 30%."</p>
-<span class="text-sm text-gray-400">Juan Pérez — Grupo Éxito</span>
+<p>"Pasamos de competir por precio a competir por valor."</p>
+<span class="text-sm text-gray-500">— Grupo Éxito</span>
 </div>
 
 <div class="card">
-<p>"La imagen de nuestra marca cambió totalmente."</p>
-<span class="text-sm text-gray-400">Laura Gómez — Bancolombia</span>
+<p>"La percepción de nuestra marca subió inmediatamente."</p>
+<span class="text-sm text-gray-500">— Bancolombia</span>
 </div>
 
 <div class="card">
-<p>"Nivel premium real."</p>
-<span class="text-sm text-gray-400">Carlos Ruiz — Postobón</span>
-</div>
-
-<div class="card">
-<p>"Resultados inmediatos."</p>
-<span class="text-sm text-gray-400">Andrés Mejía — Nutresa</span>
-</div>
-
-<div class="card">
-<p>"Nos diferenciamos de la competencia."</p>
-<span class="text-sm text-gray-400">María Torres — Avianca</span>
-</div>
-
-<div class="card">
-<p>"Una inversión inteligente."</p>
-<span class="text-sm text-gray-400">Daniel Rojas — Claro Colombia</span>
+<p>"Ahora cerramos clientes más grandes."</p>
+<span class="text-sm text-gray-500">— Postobón</span>
 </div>
 
 </div>
 </section>
 
+<!-- CIERRE -->
+<section class="section text-center bg-black">
+<h2 class="text-5xl mb-10">
+Las marcas promedio compiten.<br>
+<span class="gold">Las inteligentes dominan.</span>
+</h2>
+
+<a href="#form" class="btn">Quiero ese nivel</a>
+</section>
+
 <!-- FORM -->
 <section id="form" class="section">
 
-<h2 class="text-5xl mb-10">Solicita asesoría</h2>
+<h2 class="text-4xl mb-10">Acceso por solicitud</h2>
 
 <div class="form-box max-w-xl">
 
-<input id="nombre" placeholder="Nombre">
+<input id="nombre" placeholder="Nombre completo">
 <input id="telefono" placeholder="Teléfono">
 <input id="correo" placeholder="Correo">
-<textarea id="mensaje" placeholder="¿Qué necesitas?"></textarea>
+<textarea id="mensaje" placeholder="Describe tu proyecto"></textarea>
 
-<button onclick="enviar()" class="btn w-full">Enviar</button>
+<button onclick="enviar()" class="btn w-full">Solicitar</button>
 
 </div>
 
@@ -198,13 +201,18 @@ No vendes más porque tu imagen no transmite poder. Nosotros solucionamos eso.
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.utils.toArray(".card").forEach(el=>{
-gsap.from(el,{
-scrollTrigger:el,
-opacity:0,
-y:80,
-duration:1.2
-})
+// Animación tipo Apple
+gsap.utils.toArray("section").forEach(sec=>{
+    gsap.from(sec,{
+        scrollTrigger:{
+            trigger:sec,
+            start:"top 85%"
+        },
+        opacity:0,
+        y:60,
+        duration:1.2,
+        ease:"power3.out"
+    });
 });
 
 function enviar(){
