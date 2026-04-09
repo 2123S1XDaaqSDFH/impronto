@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IMPRONTO | Precisión que domina</title>
+<title>IMPRONTO | Sistema de Impacto Visual</title>
 
 <link rel="icon" href="Logo.png.jpeg">
 
@@ -12,218 +12,201 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
 <style>
 body{
-    background:#000;
+    background:#050505;
     color:#fff;
-    font-family:'Inter',sans-serif;
-    overflow-x:hidden;
+    font-family:Arial;
 }
 
 /* HERO */
 .hero{
     height:100vh;
-    background:url('hero.jpg') center/cover no-repeat;
-    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 }
-.overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:linear-gradient(to bottom,rgba(0,0,0,0.7),#000);
-}
+
+/* TITULO */
 .title{
-    font-family:'Playfair Display',serif;
     font-size:clamp(3rem,8vw,6rem);
-    line-height:0.9;
+    font-weight:900;
+    letter-spacing:-2px;
 }
 
-.gold{color:#b59410;}
-
-/* BOTÓN */
-.btn{
-    border:1px solid #b59410;
-    padding:14px 40px;
-    letter-spacing:3px;
-    font-size:12px;
-    text-transform:uppercase;
-    transition:0.4s;
-}
-.btn:hover{
-    background:#b59410;
-    color:#000;
-}
-
-/* SECCIONES */
-.section{
-    padding:140px 12%;
+/* NUMEROS */
+.counter{
+    font-size:3rem;
+    font-weight:bold;
+    color:#b59410;
 }
 
 /* CARDS */
 .card{
-    background:#0f0f0f;
-    padding:40px;
-    border:1px solid #1a1a1a;
+    background:#111;
+    padding:30px;
+    border:1px solid #222;
+    transition:0.4s;
+}
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#b59410;
 }
 
-/* FORM */
-.form-box{
-    background:#0f0f0f;
-    padding:50px;
-    border:1px solid #222;
+/* BOTON */
+.btn{
+    border:1px solid #b59410;
+    padding:14px 40px;
+    text-transform:uppercase;
+    letter-spacing:3px;
 }
-input,textarea{
-    width:100%;
-    padding:14px;
-    margin-bottom:15px;
-    background:#000;
-    border:1px solid #333;
+.btn:hover{
+    background:#b59410;
+    color:#000;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav class="fixed w-full flex justify-between items-center px-12 py-6 bg-black/60 backdrop-blur z-50">
-    <img src="Logo.png.jpeg" class="h-10">
-    <a href="#form" class="btn">Cotizar</a>
-</nav>
-
 <!-- HERO -->
-<section class="hero flex items-center px-12">
-<div class="overlay"></div>
+<section class="hero">
 
-<div class="relative z-10 max-w-3xl">
+<div>
 <h1 class="title">
-La diferencia<br>
-entre verse bien<br>
-y <span class="gold">dominar el mercado.</span>
+CONSTRUIMOS<br>
+<span style="color:#b59410">IMPACTO QUE VENDE</span>
 </h1>
 
-<p class="mt-8 text-gray-400 text-lg">
-Las marcas que lideran no improvisan su imagen.
-La construyen con precisión.
+<p class="mt-6 text-gray-400">
+No es diseño. Es percepción que convierte clientes.
 </p>
 
-<a href="#form" class="btn mt-10 inline-block">Solicitar asesoría</a>
+<a href="#form" class="btn mt-10 inline-block">Empezar</a>
 </div>
+
 </section>
 
-<!-- AUTORIDAD -->
-<section class="section">
-<h2 class="text-4xl mb-10">No trabajamos con cualquiera.</h2>
+<!-- CONTADORES -->
+<section class="py-32 text-center">
 
-<p class="max-w-2xl text-gray-400 text-lg">
-Trabajamos con empresas que entienden que su imagen no es un gasto,
-es una herramienta de poder para vender más, posicionarse mejor y dominar su sector.
-</p>
+<div class="grid md:grid-cols-3 gap-10">
+
+<div>
+<div class="counter" id="c1">0</div>
+<p>Clientes impactados</p>
+</div>
+
+<div>
+<div class="counter" id="c2">0</div>
+<p>Proyectos ejecutados</p>
+</div>
+
+<div>
+<div class="counter" id="c3">0</div>
+<p>% Mejora percepción</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- PROCESO -->
-<section class="section bg-black">
-<h2 class="text-4xl mb-16">Cómo lo hacemos</h2>
+<!-- PROCESO TIPO PROSPEKTA -->
+<section class="py-32 px-10">
 
-<div class="grid md:grid-cols-3 gap-12">
-
-<div class="card">
-<h3 class="text-xl mb-4 gold">01</h3>
-<p>Analizamos tu marca y detectamos por qué no está generando el impacto que debería.</p>
-</div>
-
-<div class="card">
-<h3 class="text-xl mb-4 gold">02</h3>
-<p>Diseñamos una identidad y piezas que transmiten autoridad y confianza inmediata.</p>
-</div>
-
-<div class="card">
-<h3 class="text-xl mb-4 gold">03</h3>
-<p>Producimos con estándares premium que elevan tu percepción en el mercado.</p>
-</div>
-
-</div>
-</section>
-
-<!-- RESEÑAS -->
-<section class="section">
-<h2 class="text-4xl mb-16">Resultados</h2>
+<h2 class="text-4xl mb-16 text-center">Cómo funciona</h2>
 
 <div class="grid md:grid-cols-3 gap-10">
 
 <div class="card">
-<p>"Pasamos de competir por precio a competir por valor."</p>
-<span class="text-sm text-gray-500">— Grupo Éxito</span>
+<h3 class="text-xl mb-4">01 Diagnóstico</h3>
+<p>Analizamos por qué tu marca no vende.</p>
 </div>
 
 <div class="card">
-<p>"La percepción de nuestra marca subió inmediatamente."</p>
-<span class="text-sm text-gray-500">— Bancolombia</span>
+<h3 class="text-xl mb-4">02 Diseño</h3>
+<p>Construimos una imagen que transmite poder.</p>
 </div>
 
 <div class="card">
-<p>"Ahora cerramos clientes más grandes."</p>
-<span class="text-sm text-gray-500">— Postobón</span>
+<h3 class="text-xl mb-4">03 Producción</h3>
+<p>Ejecutamos con estándares premium.</p>
 </div>
 
 </div>
+
 </section>
 
-<!-- CIERRE -->
-<section class="section text-center bg-black">
-<h2 class="text-5xl mb-10">
-Las marcas promedio compiten.<br>
-<span class="gold">Las inteligentes dominan.</span>
-</h2>
+<!-- RESEÑAS -->
+<section class="py-32 px-10 bg-black">
 
-<a href="#form" class="btn">Quiero ese nivel</a>
+<h2 class="text-4xl mb-16 text-center">Resultados reales</h2>
+
+<div class="grid md:grid-cols-3 gap-10">
+
+<div class="card">
+<p>"Ahora cerramos clientes grandes."</p>
+<span class="text-gray-400">Grupo Éxito</span>
+</div>
+
+<div class="card">
+<p>"Subimos percepción inmediatamente."</p>
+<span class="text-gray-400">Bancolombia</span>
+</div>
+
+<div class="card">
+<p>"La mejor inversión que hicimos."</p>
+<span class="text-gray-400">Postobón</span>
+</div>
+
+</div>
+
 </section>
 
 <!-- FORM -->
-<section id="form" class="section">
+<section id="form" class="py-32 px-10">
 
-<h2 class="text-4xl mb-10">Acceso por solicitud</h2>
+<h2 class="text-4xl mb-10 text-center">Solicitar acceso</h2>
 
-<div class="form-box max-w-xl">
+<div class="max-w-xl mx-auto bg-[#111] p-10 border border-[#222]">
 
-<input id="nombre" placeholder="Nombre completo">
-<input id="telefono" placeholder="Teléfono">
-<input id="correo" placeholder="Correo">
-<textarea id="mensaje" placeholder="Describe tu proyecto"></textarea>
+<input id="nombre" placeholder="Nombre" class="w-full p-3 mb-3 bg-black border border-gray-700">
+<input id="telefono" placeholder="Teléfono" class="w-full p-3 mb-3 bg-black border border-gray-700">
+<textarea id="mensaje" placeholder="Qué necesitas" class="w-full p-3 mb-3 bg-black border border-gray-700"></textarea>
 
-<button onclick="enviar()" class="btn w-full">Solicitar</button>
+<button onclick="enviar()" class="btn w-full">Enviar</button>
 
 </div>
 
 </section>
 
 <script>
-gsap.registerPlugin(ScrollTrigger);
 
-// Animación tipo Apple
-gsap.utils.toArray("section").forEach(sec=>{
-    gsap.from(sec,{
-        scrollTrigger:{
-            trigger:sec,
-            start:"top 85%"
-        },
-        opacity:0,
-        y:60,
-        duration:1.2,
-        ease:"power3.out"
-    });
+// CONTADORES
+gsap.to("#c1",{innerText:500, duration:2, snap:{innerText:1}});
+gsap.to("#c2",{innerText:120, duration:2, snap:{innerText:1}});
+gsap.to("#c3",{innerText:85, duration:2, snap:{innerText:1}});
+
+// SCROLL
+gsap.utils.toArray(".card").forEach(el=>{
+gsap.from(el,{
+scrollTrigger:el,
+opacity:0,
+y:60,
+duration:1
+})
 });
 
 function enviar(){
 let n=document.getElementById("nombre").value;
 let t=document.getElementById("telefono").value;
-let c=document.getElementById("correo").value;
 let m=document.getElementById("mensaje").value;
 
-let url=`https://wa.me/573216904871?text=Nombre:${n}%0ATel:${t}%0ACorreo:${c}%0AMensaje:${m}`;
+let url=`https://wa.me/573216904871?text=Nombre:${n}%0ATel:${t}%0AMensaje:${m}`;
 window.open(url);
 }
+
 </script>
 
 </body>
