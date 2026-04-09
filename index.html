@@ -4,50 +4,93 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IMPRONTO | Producción Gráfica de Alto Nivel</title>
+<title>IMPRONTO | Producción que domina</title>
 
-<!-- IMPORTANTE: asegúrate que el archivo se llame EXACTO -->
-<link rel="icon" href="logo.png">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="Logo.png.jpeg">
 
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
-    background:#ffffff;
-    font-family:'Inter', sans-serif;
-    color:#111;
+    background:#000;
+    color:#fff;
+    font-family:'Inter',sans-serif;
 }
 
-.hero-title{
-    font-family:'Playfair Display', serif;
-    font-size:clamp(3rem,10vw,7rem);
-    line-height:0.95;
-    letter-spacing:-2px;
+.hero{
+    height:100vh;
+    position:relative;
+    overflow:hidden;
 }
 
-.section-title{
-    font-family:'Playfair Display', serif;
-    font-size:clamp(2rem,5vw,4rem);
+.hero video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    top:0;
+    left:0;
+    z-index:0;
 }
 
-.gold{
-    color:#b59410;
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:1;
 }
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.title{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(3rem,9vw,7rem);
+    line-height:0.9;
+}
+
+.gold{color:#b59410;}
 
 .btn{
-    border:1px solid #111;
+    border:1px solid #b59410;
     padding:14px 40px;
-    font-size:12px;
-    letter-spacing:3px;
     text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:12px;
     transition:0.4s;
 }
-
 .btn:hover{
+    background:#b59410;
+    color:#000;
+}
+
+.section{
+    padding:120px 10%;
+}
+
+.card{
     background:#111;
-    color:#fff;
+    padding:30px;
+    transition:0.4s;
+}
+.card:hover{
+    transform:translateY(-10px);
+    border:1px solid #b59410;
+}
+
+input,textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:12px;
+    background:#111;
+    border:1px solid #333;
 }
 </style>
 </head>
@@ -55,91 +98,155 @@ body{
 <body>
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full flex justify-between items-center px-10 py-6 bg-white z-50 border-b border-black/5">
-    
-    <div class="flex items-center gap-4">
-        <!-- IMPORTANTE: cambia el nombre real del archivo -->
-        <img src="logo.png" class="h-8">
-        <span class="font-bold tracking-widest text-sm">IMPRONTO</span>
-    </div>
-
-    <a href="https://wa.me/573216904871" class="btn">Cotizar</a>
+<nav class="fixed w-full flex justify-between items-center px-10 py-6 bg-black/50 backdrop-blur z-50">
+    <img src="Logo.png.jpeg" class="h-10">
+    <a href="#form" class="btn">Cotizar</a>
 </nav>
 
-<!-- HERO -->
-<section class="min-h-screen flex items-center px-10 pt-32">
-    <div class="max-w-5xl">
-        
-        <h1 class="hero-title">
-            Diseño que<br>
-            <span class="gold">impone.</span>
-        </h1>
+<!-- HERO VIDEO -->
+<section class="hero">
 
-        <p class="mt-10 text-lg max-w-xl text-gray-600">
-            Producción gráfica de alto nivel donde cada detalle comunica poder, precisión y presencia.
-        </p>
+    <video autoplay muted loop>
+        <source src="video.mp4" type="video/mp4">
+    </video>
 
-    </div>
-</section>
+    <div class="overlay"></div>
 
-<!-- BLOQUE SERVICIOS -->
-<section class="py-32 px-10 border-t border-black/5">
-
-    <h2 class="section-title mb-20">
-        Precisión en cada<br><span class="gold">detalle.</span>
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-16">
-
+    <div class="hero-content h-full flex items-center px-10">
         <div>
-            <h3 class="font-semibold text-xl mb-4">Dirección Creativa</h3>
-            <p class="text-gray-600">Conceptos sólidos, identidad visual y piezas diseñadas para posicionar tu marca por encima del promedio.</p>
-        </div>
+            <h1 class="title">
+                TU MARCA<br>
+                <span class="gold">DEBE IMPACTAR</span><br>
+                O DESAPARECE.
+            </h1>
 
-        <div>
-            <h3 class="font-semibold text-xl mb-4">Producción Premium</h3>
-            <p class="text-gray-600">Materiales, impresión y acabados pensados para transmitir exclusividad en cada pieza.</p>
-        </div>
+            <p class="mt-6 max-w-lg text-gray-300">
+                Diseño y producción gráfica pensada para convertir atención en dinero.
+            </p>
 
-        <div>
-            <h3 class="font-semibold text-xl mb-4">Gran Formato</h3>
-            <p class="text-gray-600">Impacto visual diseñado para dominar espacios y captar atención inmediata.</p>
+            <a href="#form" class="btn mt-8 inline-block">QUIERO RESULTADOS</a>
         </div>
-
     </div>
 
 </section>
 
-<!-- FRASE PODEROSA -->
-<section class="py-40 px-10 text-center bg-black text-white">
-
-    <p class="text-2xl md:text-4xl italic max-w-3xl mx-auto leading-snug">
-        “La perfección no es alcanzable, pero si la perseguimos, podemos lograr la excelencia.”
+<!-- PROBLEMA -->
+<section class="section">
+    <h2 class="text-4xl mb-6">La realidad</h2>
+    <p class="max-w-2xl text-gray-400 text-lg">
+        Si tu marca no transmite nivel, confianza y autoridad, pierdes clientes todos los días sin darte cuenta.
     </p>
+</section>
 
-    <p class="mt-6 text-sm tracking-widest opacity-60">
-        Vince Lombardi
-    </p>
+<!-- SERVICIOS -->
+<section class="section bg-black">
+    <h2 class="text-4xl mb-16">Qué hacemos</h2>
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=80" class="mb-4">
+            <h3 class="text-xl font-bold">Diseño estratégico</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1598300053653-5a35dba0f7d0?q=80" class="mb-4">
+            <h3 class="text-xl font-bold">Producción premium</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80" class="mb-4">
+            <h3 class="text-xl font-bold">Gran formato</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- RESEÑAS -->
+<section class="section">
+    <h2 class="text-4xl mb-16">Clientes</h2>
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+        <div class="card">
+            <p>"Subimos ventas en semanas."</p>
+        </div>
+
+        <div class="card">
+            <p>"Nuestra marca ahora se ve de otro nivel."</p>
+        </div>
+
+        <div class="card">
+            <p>"Inversión que se recupera sola."</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section text-center bg-black">
+    <h2 class="text-5xl mb-10">¿Vas a seguir igual?</h2>
+    <a href="#form" class="btn">SUBIR DE NIVEL</a>
+</section>
+
+<!-- FORM -->
+<section id="form" class="section">
+
+<h2 class="text-4xl mb-10">Solicita asesoría</h2>
+
+<div class="max-w-xl">
+
+<input id="nombre" placeholder="Nombre">
+<input id="telefono" placeholder="Teléfono">
+<input id="correo" placeholder="Correo">
+<textarea id="mensaje" placeholder="¿Qué necesitas?"></textarea>
+
+<button onclick="enviar()" class="btn w-full">Enviar</button>
+
+</div>
 
 </section>
 
-<!-- CTA FINAL -->
-<section class="py-32 px-10 text-center">
+<!-- BOT -->
+<div onclick="bot()" class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full cursor-pointer">
+💬
+</div>
 
-    <h2 class="section-title mb-10">
-        Tu marca merece<br><span class="gold">más nivel.</span>
-    </h2>
+<div id="chat" class="fixed bottom-20 right-6 bg-white text-black p-4 hidden w-60">
+<p>¿Qué necesitas?</p>
+<button onclick="window.location.href='https://wa.me/573216904871'" class="btn mt-3">WhatsApp</button>
+</div>
 
-    <a href="https://wa.me/573216904871" class="btn">
-        Solicitar asesoría
-    </a>
+<script>
+gsap.registerPlugin(ScrollTrigger);
 
-</section>
+gsap.utils.toArray("section").forEach(sec=>{
+    gsap.from(sec,{
+        scrollTrigger:sec,
+        opacity:0,
+        y:80,
+        duration:1.2
+    })
+});
 
-<!-- FOOTER -->
-<footer class="py-10 text-center text-xs text-gray-400 border-t border-black/5">
-    © 2026 IMPRONTO COLOMBIA S.A.S
-</footer>
+function bot(){
+    document.getElementById("chat").classList.toggle("hidden");
+}
+
+function enviar(){
+    let n=document.getElementById("nombre").value;
+    let t=document.getElementById("telefono").value;
+    let c=document.getElementById("correo").value;
+    let m=document.getElementById("mensaje").value;
+
+    let leads=JSON.parse(localStorage.getItem("leads"))||[];
+    leads.push({nombre:n,telefono:t,correo:c,mensaje:m});
+    localStorage.setItem("leads",JSON.stringify(leads));
+
+    let url=`https://wa.me/573216904871?text=Nombre:${n}%0ATel:${t}%0ACorreo:${c}%0AMensaje:${m}`;
+    window.open(url);
+}
+</script>
 
 </body>
 </html>
