@@ -1,198 +1,145 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMPRONTO COLOMBIA SAS | Heritage de Producción Gráfica</title>
-    
-    <link rel="icon" type="image/png" href="Logo.png.jpeg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: { 
-                        'imp-charcoal': '#333333', /* Texto suave Rolex */
-                        'imp-cream': '#fdfdfd', /* Fondo marfil limpio Bugatti */
-                        'imp-gold': '#b59410', /* Oro pulido sofisticado */
-                        'imp-blue-deep': '#00285a' /* Azul del logo para acentos de lujo */
-                    },
-                    fontFamily: { 
-                        'cinzel': ['Cinzel', 'serif'], /* Serif elegante tipo Rolex */
-                        'inter': ['Inter', 'sans-serif'] /* Sans-serif de precisión Bugatti */
-                    }
-                }
-            }
-        }
-    </script>
+<title>IMPRONTO | Producción Gráfica de Alto Nivel</title>
 
-    <style>
-        :root { --imp-gold: #b59410; --imp-cream: #fdfdfd; }
-        body { background-color: var(--imp-cream); color: #333333; font-family: 'Inter', sans-serif; overflow-x: hidden; margin: 0; }
-        
-        /* Layout Minimalista Extremo */
-        .glass-panel-tech { display: none !important; } /* Borrado de Prospekta */
-        
-        /* Panel Puro de Lujo */
-        .luxury-panel {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(0, 0, 0, 0.03);
-            border-radius: 4px; /* Bordes afilados y precisos */
-            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        .luxury-panel:hover { border-color: var(--imp-gold); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+<!-- IMPORTANTE: asegúrate que el archivo se llame EXACTO -->
+<link rel="icon" href="logo.png">
 
-        /* Typography & Effects */
-        .text-hero { font-family: 'Cinzel', serif; font-size: clamp(3.5rem, 15vw, 9rem); line-height: 0.9; font-weight: 900; }
-        .text-readable { color: #555555 !important; line-height: 1.8; font-weight: 300; }
-        
-        /* Marquee Lento y Solemne */
-        .infinite-scroll { display: flex; width: max-content; animation: scroll-slow 50s linear infinite; }
-        @keyframes scroll-slow { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-        .btn-luxury {
-            position: relative; z-index: 10;
-            background: var(--imp-gold); color: white;
-            padding: 20px 50px; border-radius: 2px;
-            font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 4px;
-            transition: 0.5s; overflow: hidden; font-family: 'Inter', sans-serif;
-        }
-        .btn-luxury:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(181, 148, 16, 0.2); background: #967a0d; }
+<script src="https://cdn.tailwindcss.com"></script>
 
-        ::-webkit-scrollbar { width: 3px; }
-        ::-webkit-scrollbar-track { background: #fff; }
-        ::-webkit-scrollbar-thumb { background: var(--imp-gold); }
-    </style>
+<style>
+body{
+    background:#ffffff;
+    font-family:'Inter', sans-serif;
+    color:#111;
+}
+
+.hero-title{
+    font-family:'Playfair Display', serif;
+    font-size:clamp(3rem,10vw,7rem);
+    line-height:0.95;
+    letter-spacing:-2px;
+}
+
+.section-title{
+    font-family:'Playfair Display', serif;
+    font-size:clamp(2rem,5vw,4rem);
+}
+
+.gold{
+    color:#b59410;
+}
+
+.btn{
+    border:1px solid #111;
+    padding:14px 40px;
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    transition:0.4s;
+}
+
+.btn:hover{
+    background:#111;
+    color:#fff;
+}
+</style>
 </head>
+
 <body>
 
-    <nav class="fixed top-0 w-full z-[1000] px-10 py-8 flex justify-between items-center transition-all duration-700" id="main-nav">
-        <div class="flex items-center gap-6">
-            <img src="Logo.png.jpeg" class="h-10 w-auto" alt="Logo Impronto Colombia SAS">
-            <div class="h-8 w-[1px] bg-black/10 hidden md:block"></div>
-            <span class="font-cinzel font-black text-2xl uppercase tracking-tighter text-imp-blue-deep">IMPRONTO</span>
-        </div>
+<!-- NAV -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-10 py-6 bg-white z-50 border-b border-black/5">
+    
+    <div class="flex items-center gap-4">
+        <!-- IMPORTANTE: cambia el nombre real del archivo -->
+        <img src="logo.png" class="h-8">
+        <span class="font-bold tracking-widest text-sm">IMPRONTO</span>
+    </div>
+
+    <a href="https://wa.me/573216904871" class="btn">Cotizar</a>
+</nav>
+
+<!-- HERO -->
+<section class="min-h-screen flex items-center px-10 pt-32">
+    <div class="max-w-5xl">
         
-        <div class="hidden lg:flex items-center gap-16 text-[11px] font-bold uppercase tracking-[5px] text-imp-charcoal">
-            <a href="#artesania" class="hover:text-imp-gold transition-colors">Artesanía</a>
-            <a href="#heritage" class="hover:text-imp-gold transition-colors">Heritage</a>
-            <a href="#contacto" class="hover:text-imp-gold transition-colors">Colecciones</a>
+        <h1 class="hero-title">
+            Diseño que<br>
+            <span class="gold">impone.</span>
+        </h1>
+
+        <p class="mt-10 text-lg max-w-xl text-gray-600">
+            Producción gráfica de alto nivel donde cada detalle comunica poder, precisión y presencia.
+        </p>
+
+    </div>
+</section>
+
+<!-- BLOQUE SERVICIOS -->
+<section class="py-32 px-10 border-t border-black/5">
+
+    <h2 class="section-title mb-20">
+        Precisión en cada<br><span class="gold">detalle.</span>
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-16">
+
+        <div>
+            <h3 class="font-semibold text-xl mb-4">Dirección Creativa</h3>
+            <p class="text-gray-600">Conceptos sólidos, identidad visual y piezas diseñadas para posicionar tu marca por encima del promedio.</p>
         </div>
 
-        <a href="https://wa.me/573216904871" class="btn-luxury">Cotizar</a>
-    </nav>
-
-    <section class="min-h-screen flex items-center px-10 md:px-24 bg-imp-cream pt-32 relative">
-        <div class="w-full relative z-10 hero-reveal">
-            <span class="font-inter font-black text-[10px] tracking-[6px] uppercase text-imp-gold block mb-6">Medellín • Heritage of Precision</span>
-            <h1 class="text-hero text-imp-blue-deep uppercase tracking-[-0.03em]">
-                CONCEPCIÓN & <br> <span class="text-gradient-gold">EJECUCIÓN.</span>
-            </h1>
-            <p class="mt-12 text-readable max-w-2xl text-lg md:text-3xl font-light border-l-2 border-imp-gold pl-10">
-                La artesanía de la producción gráfica de élite. Maquinaria de precisión y maestría de diseño unificadas.
-            </p>
-        </div>
-    </section>
-
-    <section id="artesania" class="py-40 bg-white px-10 md:px-24 relative z-10 border-t border-black/5">
-        <div class="max-w-4xl mb-32 reveal">
-            <h2 class="font-cinzel text-5xl md:text-8xl font-black uppercase tracking-tighter text-imp-blue-deep">EL ARTE DEL <br><span class="text-imp-gold">DETALLE.</span></h2>
+        <div>
+            <h3 class="font-semibold text-xl mb-4">Producción Premium</h3>
+            <p class="text-gray-600">Materiales, impresión y acabados pensados para transmitir exclusividad en cada pieza.</p>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-12 relative z-10">
-            <div class="luxury-panel p-16 h-[500px] flex flex-col justify-between scroll-reveal">
-                <span class="text-imp-gold font-cinzel font-black text-5xl opacity-10">I</span>
-                <div>
-                    <h3 class="font-cinzel text-3xl font-black uppercase italic mb-8 leading-none text-imp-blue-deep">Diseño <br>de Precisión</h3>
-                    <p class="text-readable text-base font-light">Conceptualización de marcas y material corporativo con rigor matemático y estético.</p>
-                </div>
-            </div>
-            <div class="luxury-panel p-16 h-[500px] flex flex-col justify-between scroll-reveal border-imp-gold/30 bg-imp-gold/5">
-                <span class="text-imp-gold font-cinzel font-black text-5xl opacity-10">II</span>
-                <div>
-                    <h3 class="font-cinzel text-3xl font-black uppercase italic mb-8 leading-none text-imp-gold">Impresión <br>Litográfica</h3>
-                    <p class="text-readable text-base font-light">Ejecución de alta gama. Catálogos, empaques y acabados especiales de ultralujo.</p>
-                </div>
-            </div>
-            <div class="luxury-panel p-16 h-[500px] flex flex-col justify-between scroll-reveal">
-                <span class="text-imp-gold font-cinzel font-black text-5xl opacity-10">III</span>
-                <div>
-                    <h3 class="font-cinzel text-3xl font-black uppercase italic mb-8 leading-none text-imp-blue-deep">Colecciones <br>Gran Formato</h3>
-                    <p class="text-readable text-base font-light">Presencia de marca imponente. Avisos, vinilos y material POP de calidad museística.</p>
-                </div>
-            </div>
+        <div>
+            <h3 class="font-semibold text-xl mb-4">Gran Formato</h3>
+            <p class="text-gray-600">Impacto visual diseñado para dominar espacios y captar atención inmediata.</p>
         </div>
-    </section>
 
-    <section id="heritage" class="py-40 bg-imp-blue-deep text-imp-cream px-10 md:px-24 border-t border-white/5 relative">
-        <div class="max-w-6xl mx-auto flex flex-col items-center text-center reveal">
-            <h2 class="font-cinzel text-4xl md:text-7xl font-black uppercase mb-20 tracking-tighter text-gradient-gold">LEGADO DE MAESTRÍA.</h2>
-            <p class="text-2xl md:text-4xl text-imp-cream font-light italic mb-16 max-w-4xl leading-snug">
-                "El diseño no es solo lo que se ve y se siente. El diseño es cómo funciona."
-            </p>
-            <div class="flex items-center gap-6">
-                <div class="w-16 h-[1px] bg-imp-gold"></div>
-                <span class="font-cinzel font-black text-[11px] tracking-[6px] uppercase text-imp-gold">Steve Jobs</span>
-            </div>
-        </div>
-    </section>
+    </div>
 
-    <footer id="contacto" class="py-32 bg-white border-t border-black/5 px-10 md:px-24 text-center">
-        <div class="max-w-4xl mx-auto flex flex-col items-center">
-            <img src="Logo.png.jpeg" class="h-20 mb-16 opacity-80" alt="Logo Impronto">
-            <p class="font-cinzel text-3xl md:text-5xl font-black italic uppercase tracking-tighter mb-16 leading-tight text-imp-blue-deep">
-                REVOLUCIONANDO <br> LA ARTESANÍA GRÁFICA.
-            </p>
-            <a href="https://wa.me/573216904871" class="btn-luxury mb-16">Cotizar</a>
-            <div class="w-16 h-[1px] bg-black/10 mb-12"></div>
-            <p class="text-[9px] font-bold tracking-[8px] uppercase opacity-20 text-imp-charcoal">© 2026 IMPRONTO COLOMBIA S.A.S. • ARS GRAPHS • COLOMBIA</p>
-        </div>
-    </footer>
+</section>
 
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
+<!-- FRASE PODEROSA -->
+<section class="py-40 px-10 text-center bg-black text-white">
 
-        // --- ANIMATIONS ENGINE (Lento y deliberado) ---
-        gsap.from(".hero-reveal", { opacity: 0, scale: 0.98, y: 80, duration: 2.5, ease: "power4.out" });
+    <p class="text-2xl md:text-4xl italic max-w-3xl mx-auto leading-snug">
+        “La perfección no es alcanzable, pero si la perseguimos, podemos lograr la excelencia.”
+    </p>
 
-        gsap.utils.toArray(".scroll-reveal").forEach((el, i) => {
-            gsap.from(el, {
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 90%",
-                    toggleActions: "play none none none"
-                },
-                opacity: 0,
-                y: 60,
-                duration: 1.8,
-                delay: i * 0.2,
-                ease: "power3.out"
-            });
-        });
+    <p class="mt-6 text-sm tracking-widest opacity-60">
+        Vince Lombardi
+    </p>
 
-        gsap.utils.toArray(".reveal").forEach(el => {
-            gsap.from(el, {
-                scrollTrigger: { trigger: el, start: "top 85%" },
-                opacity: 0, y: 50, duration: 2
-            });
-        });
+</section>
 
-        // --- NAV DYNAMICS (Solemne) ---
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('main-nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('bg-white/95', 'backdrop-blur-3xl', 'py-5', 'border-b', 'border-black/5');
-                nav.classList.remove('py-8');
-            } else {
-                nav.classList.remove('bg-white/95', 'backdrop-blur-3xl', 'py-5', 'border-b', 'border-black/5');
-                nav.classList.add('py-8');
-            }
-        });
-    </script>
+<!-- CTA FINAL -->
+<section class="py-32 px-10 text-center">
+
+    <h2 class="section-title mb-10">
+        Tu marca merece<br><span class="gold">más nivel.</span>
+    </h2>
+
+    <a href="https://wa.me/573216904871" class="btn">
+        Solicitar asesoría
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 text-center text-xs text-gray-400 border-t border-black/5">
+    © 2026 IMPRONTO COLOMBIA S.A.S
+</footer>
+
 </body>
 </html>
