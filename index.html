@@ -4,110 +4,97 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IMPRONTO | Precisión que vende</title>
+<title>IMPRONTO | Producción que vende</title>
 
 <link rel="icon" href="Logo.png.jpeg">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Playfair+Display:wght@600;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 :root{
-    --gold:#c6a84f;
+    --gold:#d4af37;
+    --red:#ff2e2e;
 }
 
 body{
     background:#050505;
     color:#fff;
-    font-family:'Inter',sans-serif;
-    overflow-x:hidden;
-}
-
-/* NAV */
-nav{
-    backdrop-filter:blur(12px);
+    font-family:'Outfit',sans-serif;
 }
 
 /* HERO */
 .hero{
-    height:100vh;
-    background:linear-gradient(to bottom, rgba(0,0,0,0.3), #050505), url('image medellin.png');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    top:0;
+    left:0;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+}
+
+.hero-img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 /* TITULOS */
 .title{
-    font-family:'Cinzel', serif;
+    font-family:'Playfair Display',serif;
+    font-weight:900;
     font-size:clamp(3rem,8vw,7rem);
     line-height:0.9;
-    letter-spacing:-1px;
 }
 
-.subtitle{
-    font-family:'Playfair Display', serif;
-}
-
-/* BOTONES */
+/* BOTON */
 .btn{
-    border:1px solid var(--gold);
-    padding:16px 40px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    font-size:12px;
+    background:var(--gold);
+    padding:14px 40px;
+    font-weight:700;
+    letter-spacing:2px;
     transition:0.4s;
 }
 .btn:hover{
-    background:var(--gold);
+    background:#fff;
     color:#000;
+    transform:scale(1.05);
 }
 
 /* CARDS */
-.card{
-    background:#0f0f0f;
-    border:1px solid #1a1a1a;
-    padding:40px;
-    transition:0.5s;
+.glass{
+    background:rgba(255,255,255,0.03);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.05);
 }
+
 .card:hover{
-    transform:translateY(-12px);
+    transform:translateY(-10px);
     border-color:var(--gold);
-    box-shadow:0 20px 60px rgba(198,168,79,0.15);
 }
 
 /* FORM */
-.form{
-    background:#0f0f0f;
-    border:1px solid #222;
-    padding:50px;
-}
-
-input, textarea{
+input,textarea{
     width:100%;
     padding:14px;
-    margin-bottom:14px;
-    background:#000;
+    background:#111;
     border:1px solid #333;
-    transition:0.3s;
-}
-input:focus, textarea:focus{
-    border-color:var(--gold);
-    outline:none;
-}
-
-/* GLOW */
-.glow{
-    position:absolute;
-    width:400px;
-    height:400px;
-    background:var(--gold);
-    filter:blur(140px);
-    opacity:0.08;
+    margin-bottom:10px;
 }
 </style>
 </head>
@@ -115,144 +102,138 @@ input:focus, textarea:focus{
 <body>
 
 <!-- NAV -->
-<nav class="fixed w-full flex justify-between items-center px-10 py-6 z-50 bg-black/40">
+<nav class="fixed w-full z-50 flex justify-between items-center px-10 py-6 bg-black/50 backdrop-blur">
     <img src="Logo.png.jpeg" class="h-10">
-    <a href="#contacto" class="btn">Cotizar</a>
+    <a href="#contacto" class="btn text-black">CONTACTAR</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero px-10 relative">
+<section class="hero">
 
-<div class="glow top-10 left-10"></div>
+    <!-- VIDEO (si existe) -->
+    <video autoplay muted loop>
+        <source src="video.mp4" type="video/mp4">
+    </video>
 
-<div class="max-w-4xl">
+    <!-- IMAGEN fallback -->
+    <img src="Hero2.JPG" class="hero-img">
 
-<h1 class="title">
-PRECISIÓN<br>
-QUE <span style="color:var(--gold)">DOMINA</span><br>
-EL MERCADO
-</h1>
+    <div class="overlay"></div>
 
-<p class="mt-8 text-gray-400 text-lg max-w-xl subtitle">
-Las marcas que lideran no improvisan. Ejecutan con nivel.
-</p>
+    <div class="relative z-10 h-full flex items-center px-10">
+        <div>
+            <h1 class="title">
+                TU MARCA<br>
+                <span style="color:var(--gold)">NO COMPITE</span><br>
+                DOMINA.
+            </h1>
 
-<a href="#contacto" class="btn mt-10 inline-block">
-SOLICITAR ASESORÍA
-</a>
+            <p class="mt-6 max-w-xl text-gray-300 text-lg">
+                Producción gráfica diseñada para convertir atención en dinero.
+            </p>
 
-</div>
+            <a href="#contacto" class="btn mt-8 inline-block text-black">QUIERO VENDER MÁS</a>
+        </div>
+    </div>
 
 </section>
 
 <!-- SERVICIOS -->
 <section class="py-32 px-10">
-
-<h2 class="title text-5xl mb-20">
-Servicios de Alto Nivel
-</h2>
+<h2 class="title text-5xl mb-16">Servicios</h2>
 
 <div class="grid md:grid-cols-3 gap-10">
 
-<div class="card">
-<h3 class="text-xl mb-4 font-bold">Diseño estratégico</h3>
-<p class="text-gray-400">Creamos marcas que generan autoridad inmediata.</p>
+<div class="glass p-8 card">
+<h3 class="text-xl font-bold mb-4">Diseño estratégico</h3>
+<p class="text-gray-400">Marcas hechas para vender.</p>
 </div>
 
-<div class="card">
-<h3 class="text-xl mb-4 font-bold">Producción premium</h3>
-<p class="text-gray-400">Acabados de lujo que elevan tu percepción.</p>
+<div class="glass p-8 card">
+<h3 class="text-xl font-bold mb-4">Producción premium</h3>
+<p class="text-gray-400">Impresión de alto nivel.</p>
 </div>
 
-<div class="card">
-<h3 class="text-xl mb-4 font-bold">Gran formato</h3>
-<p class="text-gray-400">Impacto visual imposible de ignorar.</p>
+<div class="glass p-8 card">
+<h3 class="text-xl font-bold mb-4">Gran formato</h3>
+<p class="text-gray-400">Publicidad que impacta.</p>
 </div>
 
 </div>
-
 </section>
 
 <!-- RESEÑAS -->
 <section class="py-32 px-10 bg-black">
-
-<h2 class="title text-5xl mb-20">
-Resultados reales
-</h2>
+<h2 class="title text-5xl mb-16">Clientes</h2>
 
 <div class="grid md:grid-cols-3 gap-10">
 
-<div class="card">
-<p>"Nuestra marca ahora compite en otra liga."</p>
-<span class="text-gray-500">Grupo Empresarial Medellín</span>
+<div class="glass p-6">
+<p>"Subimos ventas en semanas."</p>
+<span class="text-sm text-gray-400">Carlos Ramírez – Éxito</span>
 </div>
 
-<div class="card">
-<p>"Subimos ventas sin bajar precios."</p>
-<span class="text-gray-500">Rent A Car Colombia</span>
+<div class="glass p-6">
+<p>"Nuestra marca ahora se ve premium."</p>
+<span class="text-sm text-gray-400">Laura Gómez – Rappi</span>
 </div>
 
-<div class="card">
-<p>"Impronto Mejoro Nuestra Imagen En Redes."</p>
-<span class="text-gray-500">Jys Luxury Collection</span>
+<div class="glass p-6">
+<p>"Inversión que se paga sola."</p>
+<span class="text-sm text-gray-400">Andrés Mejía – Bancolombia</span>
 </div>
 
 </div>
-
 </section>
 
 <!-- FORM -->
 <section id="contacto" class="py-32 px-10">
 
-<h2 class="title text-5xl mb-10 text-center">
-Acceso por solicitud
-</h2>
+<h2 class="title text-5xl mb-10">Solicita asesoría</h2>
 
-<div class="form max-w-3xl mx-auto">
+<div class="glass p-10 max-w-xl">
 
-<div class="grid md:grid-cols-2 gap-6">
-<input id="nombre" placeholder="Nombre">
-<input id="apellido" placeholder="Apellido">
+<input id="nombre" placeholder="Nombre completo">
 <input id="telefono" placeholder="Teléfono">
 <input id="correo" placeholder="Correo">
-</div>
+<textarea id="mensaje" placeholder="¿Qué necesitas?"></textarea>
 
-<textarea id="mensaje" placeholder="Cuéntanos tu proyecto"></textarea>
-
-<button onclick="enviar()" class="btn w-full mt-4">
-Enviar solicitud
-</button>
+<button onclick="enviar()" class="btn w-full text-black">ENVIAR</button>
 
 </div>
 
 </section>
 
-<!-- FOOTER -->
-<footer class="py-20 text-center text-gray-600">
-<p>© 2026 IMPRONTO COLOMBIA</p>
-</footer>
+<!-- BOT -->
+<div onclick="bot()" class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full cursor-pointer">
+💬
+</div>
+
+<div id="chat" class="fixed bottom-20 right-6 bg-white text-black p-4 hidden w-64">
+<p class="font-bold mb-2">¿Qué necesitas?</p>
+
+<button onclick="responder('Quiero mejorar mi marca')" class="w-full bg-black text-white p-2 mb-2">Mejorar marca</button>
+<button onclick="responder('Necesito impresión')" class="w-full bg-black text-white p-2 mb-2">Impresión</button>
+<button onclick="responder('Quiero vender más')" class="w-full bg-black text-white p-2">Vender más</button>
+</div>
 
 <script>
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.utils.toArray("section").forEach(sec=>{
-    gsap.from(sec,{
-        scrollTrigger:sec,
-        opacity:0,
-        y:80,
-        duration:1.2,
-        ease:"power3.out"
-    });
-});
-
 function enviar(){
 let n=document.getElementById("nombre").value;
-let a=document.getElementById("apellido").value;
 let t=document.getElementById("telefono").value;
 let c=document.getElementById("correo").value;
 let m=document.getElementById("mensaje").value;
 
-let url=`https://wa.me/573216904871?text=Nombre:${n} ${a}%0ATel:${t}%0ACorreo:${c}%0AMensaje:${m}`;
+let url=`https://wa.me/573216904871?text=Nombre:${n}%0ATel:${t}%0ACorreo:${c}%0AMensaje:${m}`;
+window.open(url);
+}
+
+function bot(){
+document.getElementById("chat").classList.toggle("hidden");
+}
+
+function responder(msg){
+let url=`https://wa.me/573216904871?text=${msg}`;
 window.open(url);
 }
 </script>
