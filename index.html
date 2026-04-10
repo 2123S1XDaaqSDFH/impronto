@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IMPRONTO | Sistema de Impacto Visual</title>
+<title>IMPRONTO | Precisión que vende</title>
 
 <link rel="icon" href="Logo.png.jpeg">
 
@@ -12,126 +12,161 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Playfair+Display:wght@600;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
+:root{
+    --gold:#c6a84f;
+}
+
 body{
     background:#050505;
     color:#fff;
-    font-family:Arial;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+    backdrop-filter:blur(12px);
 }
 
 /* HERO */
 .hero{
     height:100vh;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.3), #050505), url('image medellin.png');
+    background-size:cover;
+    background-position:center;
     display:flex;
     align-items:center;
-    justify-content:center;
-    text-align:center;
 }
 
-/* TITULO */
+/* TITULOS */
 .title{
-    font-size:clamp(3rem,8vw,6rem);
-    font-weight:900;
-    letter-spacing:-2px;
+    font-family:'Cinzel', serif;
+    font-size:clamp(3rem,8vw,7rem);
+    line-height:0.9;
+    letter-spacing:-1px;
 }
 
-/* NUMEROS */
-.counter{
-    font-size:3rem;
-    font-weight:bold;
-    color:#b59410;
+.subtitle{
+    font-family:'Playfair Display', serif;
+}
+
+/* BOTONES */
+.btn{
+    border:1px solid var(--gold);
+    padding:16px 40px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:12px;
+    transition:0.4s;
+}
+.btn:hover{
+    background:var(--gold);
+    color:#000;
 }
 
 /* CARDS */
 .card{
-    background:#111;
-    padding:30px;
-    border:1px solid #222;
-    transition:0.4s;
+    background:#0f0f0f;
+    border:1px solid #1a1a1a;
+    padding:40px;
+    transition:0.5s;
 }
 .card:hover{
-    transform:translateY(-8px);
-    border-color:#b59410;
+    transform:translateY(-12px);
+    border-color:var(--gold);
+    box-shadow:0 20px 60px rgba(198,168,79,0.15);
 }
 
-/* BOTON */
-.btn{
-    border:1px solid #b59410;
-    padding:14px 40px;
-    text-transform:uppercase;
-    letter-spacing:3px;
+/* FORM */
+.form{
+    background:#0f0f0f;
+    border:1px solid #222;
+    padding:50px;
 }
-.btn:hover{
-    background:#b59410;
-    color:#000;
+
+input, textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:14px;
+    background:#000;
+    border:1px solid #333;
+    transition:0.3s;
+}
+input:focus, textarea:focus{
+    border-color:var(--gold);
+    outline:none;
+}
+
+/* GLOW */
+.glow{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:var(--gold);
+    filter:blur(140px);
+    opacity:0.08;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
+<!-- NAV -->
+<nav class="fixed w-full flex justify-between items-center px-10 py-6 z-50 bg-black/40">
+    <img src="Logo.png.jpeg" class="h-10">
+    <a href="#contacto" class="btn">Cotizar</a>
+</nav>
 
-<div>
+<!-- HERO -->
+<section class="hero px-10 relative">
+
+<div class="glow top-10 left-10"></div>
+
+<div class="max-w-4xl">
+
 <h1 class="title">
-CONSTRUIMOS<br>
-<span style="color:#b59410">IMPACTO QUE VENDE</span>
+PRECISIÓN<br>
+QUE <span style="color:var(--gold)">DOMINA</span><br>
+EL MERCADO
 </h1>
 
-<p class="mt-6 text-gray-400">
-No es diseño. Es percepción que convierte clientes.
+<p class="mt-8 text-gray-400 text-lg max-w-xl subtitle">
+Las marcas que lideran no improvisan. Ejecutan con nivel.
 </p>
 
-<a href="#form" class="btn mt-10 inline-block">Empezar</a>
-</div>
-
-</section>
-
-<!-- CONTADORES -->
-<section class="py-32 text-center">
-
-<div class="grid md:grid-cols-3 gap-10">
-
-<div>
-<div class="counter" id="c1">0</div>
-<p>Clientes impactados</p>
-</div>
-
-<div>
-<div class="counter" id="c2">0</div>
-<p>Proyectos ejecutados</p>
-</div>
-
-<div>
-<div class="counter" id="c3">0</div>
-<p>% Mejora percepción</p>
-</div>
+<a href="#contacto" class="btn mt-10 inline-block">
+SOLICITAR ASESORÍA
+</a>
 
 </div>
 
 </section>
 
-<!-- PROCESO TIPO PROSPEKTA -->
+<!-- SERVICIOS -->
 <section class="py-32 px-10">
 
-<h2 class="text-4xl mb-16 text-center">Cómo funciona</h2>
+<h2 class="title text-5xl mb-20">
+Servicios de Alto Nivel
+</h2>
 
 <div class="grid md:grid-cols-3 gap-10">
 
 <div class="card">
-<h3 class="text-xl mb-4">01 Diagnóstico</h3>
-<p>Analizamos por qué tu marca no vende.</p>
+<h3 class="text-xl mb-4 font-bold">Diseño estratégico</h3>
+<p class="text-gray-400">Creamos marcas que generan autoridad inmediata.</p>
 </div>
 
 <div class="card">
-<h3 class="text-xl mb-4">02 Diseño</h3>
-<p>Construimos una imagen que transmite poder.</p>
+<h3 class="text-xl mb-4 font-bold">Producción premium</h3>
+<p class="text-gray-400">Acabados de lujo que elevan tu percepción.</p>
 </div>
 
 <div class="card">
-<h3 class="text-xl mb-4">03 Producción</h3>
-<p>Ejecutamos con estándares premium.</p>
+<h3 class="text-xl mb-4 font-bold">Gran formato</h3>
+<p class="text-gray-400">Impacto visual imposible de ignorar.</p>
 </div>
 
 </div>
@@ -141,23 +176,25 @@ No es diseño. Es percepción que convierte clientes.
 <!-- RESEÑAS -->
 <section class="py-32 px-10 bg-black">
 
-<h2 class="text-4xl mb-16 text-center">Resultados reales</h2>
+<h2 class="title text-5xl mb-20">
+Resultados reales
+</h2>
 
 <div class="grid md:grid-cols-3 gap-10">
 
 <div class="card">
-<p>"Ahora cerramos clientes grandes."</p>
-<span class="text-gray-400">Grupo Éxito</span>
+<p>"Nuestra marca ahora compite en otra liga."</p>
+<span class="text-gray-500">Grupo Empresarial Medellín</span>
 </div>
 
 <div class="card">
-<p>"Subimos percepción inmediatamente."</p>
-<span class="text-gray-400">Bancolombia</span>
+<p>"Subimos ventas sin bajar precios."</p>
+<span class="text-gray-500">Rent A Car Colombia</span>
 </div>
 
 <div class="card">
-<p>"La mejor inversión que hicimos."</p>
-<span class="text-gray-400">Postobón</span>
+<p>"Impronto Mejoro Nuestra Imagen En Redes."</p>
+<span class="text-gray-500">Jys Luxury Collection</span>
 </div>
 
 </div>
@@ -165,48 +202,59 @@ No es diseño. Es percepción que convierte clientes.
 </section>
 
 <!-- FORM -->
-<section id="form" class="py-32 px-10">
+<section id="contacto" class="py-32 px-10">
 
-<h2 class="text-4xl mb-10 text-center">Solicitar acceso</h2>
+<h2 class="title text-5xl mb-10 text-center">
+Acceso por solicitud
+</h2>
 
-<div class="max-w-xl mx-auto bg-[#111] p-10 border border-[#222]">
+<div class="form max-w-3xl mx-auto">
 
-<input id="nombre" placeholder="Nombre" class="w-full p-3 mb-3 bg-black border border-gray-700">
-<input id="telefono" placeholder="Teléfono" class="w-full p-3 mb-3 bg-black border border-gray-700">
-<textarea id="mensaje" placeholder="Qué necesitas" class="w-full p-3 mb-3 bg-black border border-gray-700"></textarea>
+<div class="grid md:grid-cols-2 gap-6">
+<input id="nombre" placeholder="Nombre">
+<input id="apellido" placeholder="Apellido">
+<input id="telefono" placeholder="Teléfono">
+<input id="correo" placeholder="Correo">
+</div>
 
-<button onclick="enviar()" class="btn w-full">Enviar</button>
+<textarea id="mensaje" placeholder="Cuéntanos tu proyecto"></textarea>
+
+<button onclick="enviar()" class="btn w-full mt-4">
+Enviar solicitud
+</button>
 
 </div>
 
 </section>
 
+<!-- FOOTER -->
+<footer class="py-20 text-center text-gray-600">
+<p>© 2026 IMPRONTO COLOMBIA</p>
+</footer>
+
 <script>
+gsap.registerPlugin(ScrollTrigger);
 
-// CONTADORES
-gsap.to("#c1",{innerText:500, duration:2, snap:{innerText:1}});
-gsap.to("#c2",{innerText:120, duration:2, snap:{innerText:1}});
-gsap.to("#c3",{innerText:85, duration:2, snap:{innerText:1}});
-
-// SCROLL
-gsap.utils.toArray(".card").forEach(el=>{
-gsap.from(el,{
-scrollTrigger:el,
-opacity:0,
-y:60,
-duration:1
-})
+gsap.utils.toArray("section").forEach(sec=>{
+    gsap.from(sec,{
+        scrollTrigger:sec,
+        opacity:0,
+        y:80,
+        duration:1.2,
+        ease:"power3.out"
+    });
 });
 
 function enviar(){
 let n=document.getElementById("nombre").value;
+let a=document.getElementById("apellido").value;
 let t=document.getElementById("telefono").value;
+let c=document.getElementById("correo").value;
 let m=document.getElementById("mensaje").value;
 
-let url=`https://wa.me/573216904871?text=Nombre:${n}%0ATel:${t}%0AMensaje:${m}`;
+let url=`https://wa.me/573216904871?text=Nombre:${n} ${a}%0ATel:${t}%0ACorreo:${c}%0AMensaje:${m}`;
 window.open(url);
 }
-
 </script>
 
 </body>
