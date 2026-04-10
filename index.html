@@ -4,201 +4,207 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IMPRONTO | Producción que vende</title>
+<title>IMPRONTO | Producción que domina</title>
 
-<link rel="icon" href="Logo.png.jpeg">
+<link rel="icon" href="./Logo.png.jpeg">
 
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-    --gold:#d4af37;
-    --red:#ff2e2e;
-}
 
 body{
-    background:#050505;
+    background:#000;
     color:#fff;
-    font-family:'Outfit',sans-serif;
+    font-family:'Inter',sans-serif;
 }
 
 /* HERO */
 .hero{
-    min-height:100vh;
-    position:relative;
-    overflow:hidden;
+    height:100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.6),#000),url('./Hero2.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
 }
 
-.hero video{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    top:0;
-    left:0;
-}
-
-.overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.7);
-}
-
-.hero-img{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-/* TITULOS */
+/* TITULO */
 .title{
     font-family:'Playfair Display',serif;
-    font-weight:900;
     font-size:clamp(3rem,8vw,7rem);
     line-height:0.9;
 }
 
 /* BOTON */
 .btn{
-    background:var(--gold);
+    border:1px solid #b59410;
     padding:14px 40px;
-    font-weight:700;
-    letter-spacing:2px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:12px;
     transition:0.4s;
 }
 .btn:hover{
-    background:#fff;
+    background:#b59410;
     color:#000;
-    transform:scale(1.05);
+}
+
+/* SECCIONES */
+.section{
+    padding:120px 10%;
 }
 
 /* CARDS */
-.glass{
-    background:rgba(255,255,255,0.03);
-    backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,0.05);
+.card{
+    background:#111;
+    padding:30px;
+    border-radius:10px;
+    transition:0.4s;
 }
-
 .card:hover{
     transform:translateY(-10px);
-    border-color:var(--gold);
+    border:1px solid #b59410;
 }
 
-/* FORM */
+/* FORM PRO */
+.form-box{
+    background:linear-gradient(145deg,#111,#000);
+    padding:40px;
+    border-radius:20px;
+    border:1px solid #333;
+}
+
 input,textarea{
     width:100%;
     padding:14px;
-    background:#111;
+    margin-bottom:12px;
+    background:#000;
     border:1px solid #333;
-    margin-bottom:10px;
+    border-radius:8px;
 }
+
 </style>
 </head>
 
 <body>
 
 <!-- NAV -->
-<nav class="fixed w-full z-50 flex justify-between items-center px-10 py-6 bg-black/50 backdrop-blur">
-    <img src="Logo.png.jpeg" class="h-10">
-    <a href="#contacto" class="btn text-black">CONTACTAR</a>
+<nav class="fixed w-full flex justify-between items-center px-10 py-6 bg-black/60 backdrop-blur z-50">
+    <img src="./Logo.png.jpeg" class="h-10">
+    <a href="#form" class="btn">Cotizar</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero px-10">
 
-    <!-- VIDEO (si existe) -->
-    <video autoplay muted loop>
-        <source src="video.mp4" type="video/mp4">
-    </video>
+<div>
+<h1 class="title">
+TU MARCA<br>
+<span style="color:#b59410">DEBE DOMINAR</span><br>
+O DESAPARECE.
+</h1>
 
-    <!-- IMAGEN fallback -->
-    <img src="Hero2.JPG" class="hero-img">
+<p class="mt-6 max-w-lg text-gray-300">
+Diseño + producción gráfica pensada para convertir atención en dinero.
+</p>
 
-    <div class="overlay"></div>
-
-    <div class="relative z-10 h-full flex items-center px-10">
-        <div>
-            <h1 class="title">
-                TU MARCA<br>
-                <span style="color:var(--gold)">NO COMPITE</span><br>
-                DOMINA.
-            </h1>
-
-            <p class="mt-6 max-w-xl text-gray-300 text-lg">
-                Producción gráfica diseñada para convertir atención en dinero.
-            </p>
-
-            <a href="#contacto" class="btn mt-8 inline-block text-black">QUIERO VENDER MÁS</a>
-        </div>
-    </div>
+<a href="#form" class="btn mt-8 inline-block">QUIERO RESULTADOS</a>
+</div>
 
 </section>
 
 <!-- SERVICIOS -->
-<section class="py-32 px-10">
-<h2 class="title text-5xl mb-16">Servicios</h2>
+<section class="section">
+
+<h2 class="text-4xl mb-16">Servicios</h2>
 
 <div class="grid md:grid-cols-3 gap-10">
 
-<div class="glass p-8 card">
-<h3 class="text-xl font-bold mb-4">Diseño estratégico</h3>
-<p class="text-gray-400">Marcas hechas para vender.</p>
+<div class="card">
+<img src="./hero.jpg" class="mb-4">
+<h3>Diseño estratégico</h3>
 </div>
 
-<div class="glass p-8 card">
-<h3 class="text-xl font-bold mb-4">Producción premium</h3>
-<p class="text-gray-400">Impresión de alto nivel.</p>
+<div class="card">
+<img src="./hero.jpg" class="mb-4">
+<h3>Producción premium</h3>
 </div>
 
-<div class="glass p-8 card">
-<h3 class="text-xl font-bold mb-4">Gran formato</h3>
-<p class="text-gray-400">Publicidad que impacta.</p>
+<div class="card">
+<img src="./hero.jpg" class="mb-4">
+<h3>Gran formato</h3>
 </div>
 
 </div>
+
 </section>
 
 <!-- RESEÑAS -->
-<section class="py-32 px-10 bg-black">
-<h2 class="title text-5xl mb-16">Clientes</h2>
+<section class="section bg-black">
+
+<h2 class="text-4xl mb-16">Clientes</h2>
 
 <div class="grid md:grid-cols-3 gap-10">
 
-<div class="glass p-6">
-<p>"Subimos ventas en semanas."</p>
-<span class="text-sm text-gray-400">Carlos Ramírez – Éxito</span>
+<div class="card">
+<p>"Triplicamos ventas en 2 meses."</p>
+<strong>Juan Pérez - Nike Colombia</strong>
 </div>
 
-<div class="glass p-6">
-<p>"Nuestra marca ahora se ve premium."</p>
-<span class="text-sm text-gray-400">Laura Gómez – Rappi</span>
+<div class="card">
+<p>"La mejor inversión que hicimos."</p>
+<strong>Camila Torres - Rappi</strong>
 </div>
 
-<div class="glass p-6">
-<p>"Inversión que se paga sola."</p>
-<span class="text-sm text-gray-400">Andrés Mejía – Bancolombia</span>
+<div class="card">
+<p>"Nuestra marca ahora vende sola."</p>
+<strong>David Gómez - Bancolombia</strong>
+</div>
+
+<div class="card">
+<p>"Nivel internacional."</p>
+<strong>Sebastián Ruiz - Adidas</strong>
+</div>
+
+<div class="card">
+<p>"Impacto real en clientes."</p>
+<strong>Laura Mejía - Éxito</strong>
+</div>
+
+<div class="card">
+<p>"Resultados inmediatos."</p>
+<strong>Andrés Castro - Falabella</strong>
 </div>
 
 </div>
+
+</section>
+
+<!-- CTA -->
+<section class="section text-center">
+
+<h2 class="text-5xl mb-10">¿Vas a seguir invisible?</h2>
+<a href="#form" class="btn">SUBIR DE NIVEL</a>
+
 </section>
 
 <!-- FORM -->
-<section id="contacto" class="py-32 px-10">
+<section id="form" class="section">
 
-<h2 class="title text-5xl mb-10">Solicita asesoría</h2>
+<h2 class="text-4xl mb-10">Solicita asesoría</h2>
 
-<div class="glass p-10 max-w-xl">
+<div class="form-box max-w-xl">
 
 <input id="nombre" placeholder="Nombre completo">
 <input id="telefono" placeholder="Teléfono">
 <input id="correo" placeholder="Correo">
 <textarea id="mensaje" placeholder="¿Qué necesitas?"></textarea>
 
-<button onclick="enviar()" class="btn w-full text-black">ENVIAR</button>
+<button onclick="enviar()" class="btn w-full">Enviar</button>
 
 </div>
 
@@ -209,33 +215,42 @@ input,textarea{
 💬
 </div>
 
-<div id="chat" class="fixed bottom-20 right-6 bg-white text-black p-4 hidden w-64">
-<p class="font-bold mb-2">¿Qué necesitas?</p>
-
-<button onclick="responder('Quiero mejorar mi marca')" class="w-full bg-black text-white p-2 mb-2">Mejorar marca</button>
-<button onclick="responder('Necesito impresión')" class="w-full bg-black text-white p-2 mb-2">Impresión</button>
-<button onclick="responder('Quiero vender más')" class="w-full bg-black text-white p-2">Vender más</button>
+<div id="chat" class="fixed bottom-20 right-6 bg-white text-black p-4 hidden w-60">
+<p>¿Qué necesitas?</p>
+<button onclick="window.location.href='https://wa.me/573216904871'" class="btn mt-3">WhatsApp</button>
 </div>
 
 <script>
-function enviar(){
-let n=document.getElementById("nombre").value;
-let t=document.getElementById("telefono").value;
-let c=document.getElementById("correo").value;
-let m=document.getElementById("mensaje").value;
 
-let url=`https://wa.me/573216904871?text=Nombre:${n}%0ATel:${t}%0ACorreo:${c}%0AMensaje:${m}`;
-window.open(url);
-}
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray("section").forEach(sec=>{
+    gsap.from(sec,{
+        scrollTrigger:sec,
+        opacity:0,
+        y:80,
+        duration:1
+    })
+});
 
 function bot(){
-document.getElementById("chat").classList.toggle("hidden");
+    document.getElementById("chat").classList.toggle("hidden");
 }
 
-function responder(msg){
-let url=`https://wa.me/573216904871?text=${msg}`;
-window.open(url);
+function enviar(){
+    let n=document.getElementById("nombre").value;
+    let t=document.getElementById("telefono").value;
+    let c=document.getElementById("correo").value;
+    let m=document.getElementById("mensaje").value;
+
+    let leads=JSON.parse(localStorage.getItem("leads"))||[];
+    leads.push({nombre:n,telefono:t,correo:c,mensaje:m});
+    localStorage.setItem("leads",JSON.stringify(leads));
+
+    let url=`https://wa.me/573216904871?text=Nombre:${n}%0ATel:${t}%0ACorreo:${c}%0AMensaje:${m}`;
+    window.open(url);
 }
+
 </script>
 
 </body>
